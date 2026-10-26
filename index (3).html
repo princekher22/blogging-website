@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | DAYLOG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">DAY<span>LOG</span>_</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="diary.html">Diary</a>
+      <a href="routine.html">Routine</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <div class="hero box">
+      <h1><span id="typed"></span><span class="cursor">|</span></h1>
+      <p id="clock">00:00:00</p>
+      <p id="date"></p>
+      <div class="progress"><div id="dayfill"></div></div>
+      <p id="daytext"></p>
+    </div>
+
+    <div class="stats">
+      <div class="box"><b id="count">0</b>entries written</div>
+      <div class="box"><b id="streak">0</b>day streak</div>
+      <div class="box"><b>4</b>moods tracked</div>
+    </div>
+
+    <h2>Today's entry</h2>
+    <div class="box entry" id="latest"></div>
+  </main>
+  <footer>DAYLOG &copy; 2026 | A blog about my day, one entry at a time</footer>
+  <script src="script.js"></script>
+</body>
+</html>

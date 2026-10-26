@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | DAYLOG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">DAY<span>LOG</span>_</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="diary.html">Diary</a>
+      <a href="routine.html">Routine</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Contact me</h2>
+    <p>Want to share your own day or give feedback? Send me a message.</p>
+    <form class="box" id="contactForm">
+      <label for="name">Your name</label>
+      <input type="text" id="name">
+
+      <label for="email">Your email</label>
+      <input type="email" id="email">
+
+      <label for="msg">Message</label>
+      <textarea id="msg" rows="5"></textarea>
+
+      <p id="error"></p>
+      <button class="btn" type="submit">Send message</button>
+      <p id="ok"></p>
+    </form>
+  </main>
+  <footer>DAYLOG &copy; 2026 | A blog about my day, one entry at a time</footer>
+  <script src="script.js"></script>
+</body>
+</html>

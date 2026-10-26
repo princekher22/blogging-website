@@ -1,0 +1,189 @@
+/* DAYLOG - simple futuristic diary blog */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #d8f3ff;
+  line-height: 1.6;
+  background-color: #05080f;
+  /* faint grid lines for a sci-fi look */
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+h1, h2, h3, .logo {
+  font-family: "Orbitron", "Courier New", monospace;
+  letter-spacing: 1px;
+}
+
+/* ---------- header ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 24px;
+  background: rgba(5, 8, 15, 0.92);
+  border-bottom: 1px solid #00e5ff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #00e5ff;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 10px #00e5ff;
+}
+
+.logo span { color: #ffb300; }
+
+nav a {
+  color: #d8f3ff;
+  text-decoration: none;
+  margin-left: 16px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+}
+
+nav a:hover, nav a.active {
+  border: 1px solid #00e5ff;
+  color: #00e5ff;
+}
+
+/* ---------- layout ---------- */
+main {
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.box {
+  background: rgba(10, 20, 35, 0.85);
+  border: 1px solid #1c5566;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.box:hover {
+  border-color: #00e5ff;
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.3);
+}
+
+/* ---------- home ---------- */
+.hero { text-align: center; padding: 30px 10px; }
+.hero h1 { font-size: 34px; margin: 0 0 10px 0; }
+#typed { color: #ffb300; }
+.cursor { animation: blink 1s infinite; color: #00e5ff; }
+@keyframes blink { 50% { opacity: 0; } }
+
+#clock {
+  font-family: "Orbitron", monospace;
+  font-size: 54px;
+  color: #00e5ff;
+  text-shadow: 0 0 16px #00e5ff;
+  margin: 10px 0 0 0;
+}
+
+#date { color: #9bc9d6; margin: 0 0 15px 0; }
+
+.progress {
+  height: 14px;
+  border: 1px solid #00e5ff;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#dayfill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00e5ff, #ffb300);
+  transition: width 1s;
+}
+
+.stats { display: flex; gap: 15px; flex-wrap: wrap; }
+.stats .box { flex: 1; min-width: 150px; text-align: center; }
+.stats b { display: block; font-size: 30px; color: #ffb300; font-family: "Orbitron", monospace; }
+
+/* ---------- buttons, chips ---------- */
+.btn, .chip {
+  background: transparent;
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
+  padding: 8px 18px;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover, .chip:hover, .chip.on {
+  background: #00e5ff;
+  color: #05080f;
+}
+
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0 20px 0; }
+
+/* ---------- diary entries ---------- */
+.entry h3 { margin: 4px 0; color: #ffb300; }
+.entry small { color: #9bc9d6; }
+.tag {
+  display: inline-block;
+  border: 1px solid #ffb300;
+  color: #ffb300;
+  padding: 0 8px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-left: 6px;
+}
+.more { display: none; }
+.entry.open .more { display: block; }
+
+/* ---------- table ---------- */
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 500px; }
+th, td { border: 1px solid #1c5566; padding: 10px; text-align: left; }
+th { background: #0d3a47; color: #00e5ff; }
+tr:hover td { background: rgba(0, 229, 255, 0.08); }
+
+/* ---------- form ---------- */
+label { display: block; margin-top: 12px; color: #9bc9d6; }
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: #05080f;
+  color: #d8f3ff;
+  border: 1px solid #1c5566;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 15px;
+}
+input:focus, textarea:focus, select:focus { outline: none; border-color: #00e5ff; }
+#error { color: #ff6b6b; }
+#ok { color: #7dffb0; }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #1c5566;
+  color: #9bc9d6;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  #clock { font-size: 36px; }
+  .hero h1 { font-size: 24px; }
+  nav a { margin-left: 4px; font-size: 14px; }
+}
